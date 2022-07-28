@@ -1,0 +1,102 @@
+
+\documentclass[11pt,a4paper]{article}
+%\usepackage{russ}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+
+\usepackage{amsmath, amssymb}
+\usepackage{amscd}
+\usepackage{amsthm}
+% \usepackage[left=1.5cm,right=1.5cm,top=1cm,bottom=1cm]{geometry}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage[pdftex,dvipsnames]{xcolor}  % Coloured text etc.
+\usepackage{graphicx}
+\usepackage{xargs}                      % Use more than one optional parameter in a new 
+\graphicspath{ {./pic/} }
+
+\def\Z{\mathbb{Z}}
+\def\N{\mathbb{N}}
+\def\R{\mathbb{R}}
+\def\F{\mathbb{F}}
+\def\Q{\mathbb{Q}}
+
+\def\E{\mathrm{\mathbb{E}}}
+\def\D{\mathrm{\mathbb{D}}}
+\def\P{\mathrm{P}}
+
+\newcounter{znum}
+\newcommand{\z}[1]{\addtocounter{znum}{1} \textbf{Задача \arabic{znum}#1. }}
+
+\newcounter{defnum}
+\newcommand{\df}[1]{\addtocounter{defnum}{1} \textbf{Определение \arabic{defnum}.} {\it #1}}
+
+\renewcommand{\!}{\textcolor{red}{!}}
+
+\usepackage{wrapfig}
+\usepackage{graphicx} % Allows including images
+\usepackage{float}
+
+
+\usepackage[
+	% disable,
+	colorinlistoftodos, prependcaption, textsize=normalsize,
+	linecolor=Dandelion, backgroundcolor=Yellow!25, bordercolor=Dandelion,
+	textwidth=100
+]{todonotes}
+
+\newcommandx{\note}[2][1=]{\todo[size=footnotesize, #1]{#2}}
+\newcommandx{\longnote}[2][1=]{\todo[inline, nolist, linecolor=Gray, backgroundcolor=Gray!25, bordercolor=Gray, #1]{#2}}
+\newcommandx{\problem}[2][1=]{\todo[backgroundcolor=red!25, linecolor=red, bordercolor=red, #1]{#2}}
+\newcommandx{\question}[2][1=]{\todo[
+	noprepend, inline,
+	linecolor=RoyalBlue, backgroundcolor=RoyalBlue!25, bordercolor=RoyalBlue, #1]{#2}
+}
+\newcommandx{\thought}[2][1=]{\todo[
+	noprepend, inline,
+	linecolor=Orchid, backgroundcolor=Orchid!25, bordercolor=Orchid, #1]{#2}
+}
+
+\newcommandx{\checkref}[2][1={check reference validity}, 2=]{
+	\todo[linecolor=red, backgroundcolor=red!25, bordercolor=red, size=footnotesize, #2]{#1}
+}
+\newcommandx{\needref}[2][1={need reference}, 2=]{
+	\todo[linecolor=red, backgroundcolor=red!25, bordercolor=red, size=footnotesize, #2]{#1}
+}
+\newcommand{\EMPH}[1]{{\large \textit{\textbf{#1}}}}
+
+
+\begin{document}
+
+\thispagestyle{empty}
+\begin{center}
+	\large
+	\textbf{Еще задачи}
+	\normalsize
+\end{center}
+
+\z{} Монету бросили 10 раз. Какова вероятность того, что \textbf{а)}~все 10 раз выпал орёл \textbf{б)}~сначала выпало 5 орлов, а затем 5 решек \textbf{в)}~выпало 5 орлов и 5 решек (в произвольном порядке)?
+
+\z{ (!)} Из 100 монет одна фальшивая имеет два орла. Выбрали случайно монету, бросили 5 раз: выпали все орлы. С какой вероятностью, если её бросить ещё 10 раз, снова выпадут все орлы?
+
+\z{} Будем считать, что рождение девочки и мальчика равновероятны. Известно, что в некоторой семье двое детей. \textbf{а)} Какова вероятность того, что из них один мальчик и одна девочка? А если известно что
+\textbf{б)} один из детей — мальчик.
+\textbf{в)} Старший ребенок - мальчик.
+\textbf{г)} Один из детей мальчик, родившийся в понедельник.
+
+\z{} В контрольной 3 задачи. Ученик, подготовившийся к контрольной, решает каждую из
+них с вероятностью $4/5$, а не готовившийся --- с вероятностью $1/5$. Известно что он готовится к контрольной с вероятностью $3/4$ и не готовится с вероятностью $1/4$. Чему равна условная вероятность того, что он готовился к контрольной, при условии, что он решил \textbf{а)} все задачи \textbf{б)} две задачи?
+
+\z{} Известно, что синдрому внезапной смерти подвержен один человек из 10000. Тест на этот синдром дает верный результат с вероятностью 99\%. Тест показывает, что у вас синдром внезапной смерти. С какой вероятностью это действительно так?
+
+\z{} Вероятность рождения двойняшек в Швамбрании равна $p$, тройняшки в Швамбрании не рождаются.
+Оцените вероятность того, что встреченный на улице швамбранец – один из пары двойняшек?
+
+\z{ (!?)} В одной лотерее у каждого игрока есть два набора из 15 различных чисел от 1 до 90. Игрок выигрывает джекпот, если случайный набор из 15 различных чисел от 1 до 90 (все такие наборы равновероятны) совпадет с одним из его наборов. Сравните с $1/2$ вероятность того, что кто-то получит джекпот, если 10 миллиардов человек будут играть в эту лотерею каждый день в течении 1000 лет (разрешается использовать внешний неорганический мозг).
+
+\z{} \textbf{а)} Двое договорились играть в орлянку до определенного количества побед. Тот, кто первым достиг этого количества побед, забирает денежный приз. Но игра была прервана, когда первому игроку осталось одержать 3 победы, а второму - одну. В каком отношении должен быть поделен приз (так, чтобы каждому досталось количество денег, пропорциональное вероятности его выигрыша)?
+\textbf{б*)} А если первому осталось n побед, а второму - k побед?
+
+
+\end{document}

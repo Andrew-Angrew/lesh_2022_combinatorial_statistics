@@ -1,0 +1,98 @@
+
+\documentclass[11pt,a4paper]{article}
+%\usepackage{russ}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+
+\usepackage{amsmath, amssymb}
+\usepackage{amscd}
+\usepackage{amsthm}
+% \usepackage[left=1.5cm,right=1.5cm,top=1cm,bottom=1cm]{geometry}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage[pdftex,dvipsnames]{xcolor}  % Coloured text etc.
+\usepackage{graphicx}
+\usepackage{xargs}                      % Use more than one optional parameter in a new 
+\graphicspath{ {./pic/} }
+
+\def\Z{\mathbb{Z}}
+\def\N{\mathbb{N}}
+\def\R{\mathbb{R}}
+\def\F{\mathbb{F}}
+\def\Q{\mathbb{Q}}
+
+\def\E{\mathrm{\mathbb{E}}}
+\def\D{\mathrm{\mathbb{D}}}
+\def\P{\mathrm{P}}
+
+\newcounter{znum}
+\newcommand{\z}[1]{\addtocounter{znum}{1} \textbf{Задача \arabic{znum}#1. }}
+
+\newcounter{defnum}
+\newcommand{\df}[1]{\addtocounter{defnum}{1} \textbf{Определение \arabic{defnum}.} {\it #1}}
+
+\renewcommand{\!}{\textcolor{red}{!}}
+
+\usepackage{wrapfig}
+\usepackage{graphicx} % Allows including images
+\usepackage{float}
+
+
+\usepackage[
+	% disable,
+	colorinlistoftodos, prependcaption, textsize=normalsize,
+	linecolor=Dandelion, backgroundcolor=Yellow!25, bordercolor=Dandelion,
+	textwidth=100
+]{todonotes}
+
+\newcommandx{\note}[2][1=]{\todo[size=footnotesize, #1]{#2}}
+\newcommandx{\longnote}[2][1=]{\todo[inline, nolist, linecolor=Gray, backgroundcolor=Gray!25, bordercolor=Gray, #1]{#2}}
+\newcommandx{\problem}[2][1=]{\todo[backgroundcolor=red!25, linecolor=red, bordercolor=red, #1]{#2}}
+\newcommandx{\question}[2][1=]{\todo[
+	noprepend, inline,
+	linecolor=RoyalBlue, backgroundcolor=RoyalBlue!25, bordercolor=RoyalBlue, #1]{#2}
+}
+\newcommandx{\thought}[2][1=]{\todo[
+	noprepend, inline,
+	linecolor=Orchid, backgroundcolor=Orchid!25, bordercolor=Orchid, #1]{#2}
+}
+
+\newcommandx{\checkref}[2][1={check reference validity}, 2=]{
+	\todo[linecolor=red, backgroundcolor=red!25, bordercolor=red, size=footnotesize, #2]{#1}
+}
+\newcommandx{\needref}[2][1={need reference}, 2=]{
+	\todo[linecolor=red, backgroundcolor=red!25, bordercolor=red, size=footnotesize, #2]{#1}
+}
+\newcommand{\EMPH}[1]{{\large \textit{\textbf{#1}}}}
+
+
+\begin{document}
+
+\pagestyle{empty}
+
+\begin{center}
+	\large
+	\textbf{Затравочные задачи.}\\
+\end{center}
+
+\z{} Одновременно подбрасываются 2 монеты, какова вероятность того что выпадет хотя бы один орел?
+
+\z{} Одновременно кидаются 2 шестигранных кубика. Какая сумма чисел выпавших на кубиках более вероятна: 9 или 10?
+
+\z{} В одной из трех коробок лежит приз, две другие коробки пустые. Вы можете показать на одну из коробок, после чего для вас откроют другую коробку, в которой ничего нет. После этого вам предлагается окончательно выбрать коробку. Можете ли вы выиграть приз с вероятностью, большей 1/2?
+
+\z{} В мешке есть три карты. У одной обе стороны белые, у другой --- красные, а у третьей --- одна белая и одна красная. Из мешка достали случайную карту и положили на стол случайной стороной вниз. Какова вероятность того, что нижняя сторона карты на столе белая, при условии, что ее верхняя сторона красная?
+
+\z{} Четверо идут в поход, у них есть 4-местная палатка, 2 одноместных спальника и один двуместный. Идут дожди и поэтому на крайних местах в палатке лежать мокро и плохо. Парни из двуместного спальника предлагают: давайте двуместный спальник будет в середине с вероятностью $\frac12$ (определяется подкидыванием монеты), а места между людьми в большом спальнике и двумя в одноместных спальниках также распределяются подкидыванием монеты.
+\textbf{а)} Какова вероятность спать у края для парня из двуместного спальника?
+\textbf{б)} Через некоторое время появляется более честное предложение: давайте (т. к. спальников всего три) большой спальник будет внутри с вероятностью $\frac13$. Посчитайте для каждого вероятности спать у края в этом случае.
+\textbf{в)} Предложите как справедливо распределять места.
+
+\z{} В жюри из трёх человек вердикт выносят большинством голосов. Председатель и помощник председателя принимают верное решение независимо с вероятностями 0.7 и 0.9, а третий для этого бросает монету. На сколько изменится у жюри вероятность вынести верное решение, если третий начнет копировать решение председателя?
+
+\z{} Ваня хочет выиграть две партии в теннис подряд из трех, играя поочередно с двумя игроками. С кем лучше играть первую партию: с более сильным игроком или с более слабым?
+
+\z{} Заключённые X, Y и Z приговорены к смертной казни. Губернатор случайным образом выбирает одного из них и милует его. Стражник знает, кто помилован, но не имеет права сказать этого. X просит стражника сказать ему имя другого заключённого, которого казнят (если казнят обоих, ответ стражника определяется броском монеты). Стражник говорит X, что казнят Y. X рад это слышать, т. к. считает, что с учетом этой информации его вероятность выживания теперь 1/2. X рассказывает все Z, который тоже обрадовался полагая, что теперь выживает с вероятностью 2/3. Кто-нибудь из них прав в этой ситуации?
+
+\end{document}
