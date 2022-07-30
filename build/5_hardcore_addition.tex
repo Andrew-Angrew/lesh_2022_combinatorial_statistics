@@ -1,0 +1,106 @@
+
+\documentclass[11pt,a4paper]{article}
+%\usepackage{russ}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+
+\usepackage{amsmath, amssymb}
+\usepackage{amscd}
+\usepackage{amsthm}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=1cm]{geometry}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage[pdftex,dvipsnames]{xcolor}  % Coloured text etc.
+\usepackage{graphicx}
+\usepackage{xargs}                      % Use more than one optional parameter in a new 
+\graphicspath{ {./pic/} }
+
+\def\Z{\mathbb{Z}}
+\def\N{\mathbb{N}}
+\def\R{\mathbb{R}}
+\def\F{\mathbb{F}}
+\def\Q{\mathbb{Q}}
+
+\def\E{\mathrm{\mathbb{E}}}
+\def\D{\mathrm{\mathbb{D}}}
+\def\P{\mathrm{P}}
+
+\newcounter{znum}
+\newcommand{\z}[1]{\addtocounter{znum}{1} \textbf{Задача \arabic{znum}#1. }}
+
+\newcounter{defnum}
+\newcommand{\df}[1]{\addtocounter{defnum}{1} \textbf{Определение \arabic{defnum}.} {\it #1}}
+
+\renewcommand{\!}{\textcolor{red}{!}}
+
+\usepackage{wrapfig}
+\usepackage{graphicx} % Allows including images
+\usepackage{float}
+
+
+\usepackage[
+	% disable,
+	colorinlistoftodos, prependcaption, textsize=normalsize,
+	linecolor=Dandelion, backgroundcolor=Yellow!25, bordercolor=Dandelion,
+	textwidth=100
+]{todonotes}
+
+\newcommandx{\note}[2][1=]{\todo[size=footnotesize, #1]{#2}}
+\newcommandx{\longnote}[2][1=]{\todo[inline, nolist, linecolor=Gray, backgroundcolor=Gray!25, bordercolor=Gray, #1]{#2}}
+\newcommandx{\problem}[2][1=]{\todo[backgroundcolor=red!25, linecolor=red, bordercolor=red, #1]{#2}}
+\newcommandx{\question}[2][1=]{\todo[
+	noprepend, inline,
+	linecolor=RoyalBlue, backgroundcolor=RoyalBlue!25, bordercolor=RoyalBlue, #1]{#2}
+}
+\newcommandx{\thought}[2][1=]{\todo[
+	noprepend, inline,
+	linecolor=Orchid, backgroundcolor=Orchid!25, bordercolor=Orchid, #1]{#2}
+}
+
+\newcommandx{\checkref}[2][1={check reference validity}, 2=]{
+	\todo[linecolor=red, backgroundcolor=red!25, bordercolor=red, size=footnotesize, #2]{#1}
+}
+\newcommandx{\needref}[2][1={need reference}, 2=]{
+	\todo[linecolor=red, backgroundcolor=red!25, bordercolor=red, size=footnotesize, #2]{#1}
+}
+\newcommand{\EMPH}[1]{{\large \textit{\textbf{#1}}}}
+
+
+\begin{document}
+\pagestyle{empty}
+
+\newpage
+\begin{center}
+	\large
+	\textbf{Жесткие матожидания.}
+\end{center}
+
+\z{} 50 мужчин и 50 женщин в случайном порядке рассаживаются вокруг круглого стола. Назовем мужчину довольным, если рядом с ним сидит женщина. Для каждого мужчины введем случайную величину равную 1, если он окажется доволен, и 0 иначе. Найдите матожидание \textbf{а)} всех таких величин; \textbf{б)}~числа довольных мужчин.
+
+\z{} \textbf{a)} С какой вероятностью число 1 будет идти первым среди чисел от 1 до $k$ в случайной перестановке?
+\textbf{б)} $n$ претендентов на должность в случайном порядке приходят на собеседование. Если в результате собеседования выясняется, что новый претендент лучше того, кто в данный момент занимает должность (или она не занята), первого нанимают, а последнего - увольняют. Найдите матожидание числа увольнений.
+
+\z{} \textbf{а)} Докажите что время работы быстрой сортировки не превосходит некоторой константы $C$, умноженной на число сравнений элементов, выполненных в ходе алгоритма. \textbf{б)} Алгоритм сравнивает любые два элемента массива не более одного раза. \textbf{в)}  Найдите вероятность того что алгоритм хоть раз сравнит данные два элемента (в зависимости от их взаимного расположения в отсортированном массиве). \textbf{г)} Докажите что матожидание времени работы q-sort на любых входных данных не превосходит $2 С n \ln n$ (считайте известным, что $\ln n > 1/2 + 1/3+\ldots +1/n$).
+
+\z{*} В тюрьме 100 заключенных. Начальник тюрьмы расставил во дворе 100 ящиков и разложил по ним 100 записок с именами всех заключенных по одной в ящик. Каждого заключенного выведут во двор и позволят ему осмотреть в любом угодном ему порядке 50 ящиков. Потом его сразу изолируют ото всех еще не бывших во дворе. Если все заключенные найдут записку со своим именем, всех отпускают. Как заключенным договориться, чтобы преуспеть в 30\% случаев? (считайте известным, что $0.3 < 1 - \ln 2 < 1 - \frac1{n+1} - \ldots - \frac1{2n}$.)
+
+
+\begin{center}
+	\large
+	\textbf{Неожиданные применения теории вероятностей.}
+\end{center}
+
+\z{} В некотором множестве выбрали 15 пятиэлементных подмножеств. Докажите, что элементы множества можно раскрасить в 2 цвета так, чтобы никакое из этих 15 подмножеств не было одноцветным\footnote{Подсказка: чтобы раскрасить, думать особо не надо --- тяп-ляп и готово!}.
+
+\z{} Для любой $\xi$ существует такой $\omega \in \Omega$, что $\xi(\omega) \geqslant E\xi$.
+
+\z{} В стране $n$ городов и из каждого города в каждый продаются авиабилеты. Средняя стоимость перелета равна 1 рубль. Путешественник хочет облететь все $n$ городов, начав и закончив в своем родном городе. Хватит ли ему $n$ рублей?
+
+\z{} На столе лежат 15 журналов, закрывающих его целиком. Можно ли забрать семь журналов так, чтобы оставшиеся журналы закрывали не меньше $8/15$ площади стола?
+
+\z{}  На каждого из $n$ пионеров надевают колпак одного из $c$ цветов. Затем каждый должен назвать цвет своего колпака. \textbf{а)} Докажите, что если надевать колпаки на пионеров случайно, то матожидание числа их правильных ответов будет равно $n/c$ вне зависимости от их стратегии.  \textbf{б)} Докажите, что у них нет стратегии, гарантирующей более $n/c$ правильных ответов. \textbf{в)} Предъявите стратегию, гарантирующую $ \left\lfloor n/c \right\rfloor$ правильных ответов.
+
+\z{*} Число Рамсея\footnote{Задача оценивания $R(n,k)$ очень известна среди "комбинаторщиков" и над ней много думали. Однако оценок сильно лучших чем $2^{(k-1)/2}$ никто доказывать не умеет.} $R(n,k)$ --- это самое маленькое число $N$, такое что в любом графе на $N$ вершинах есть либо $n$ попарно соединенных вершин, либо $k$ попарно не соединенных вершин. Докажите что $R(k , k) \geqslant 2^{(k - 1)/2}$.
+
+\end{document}
