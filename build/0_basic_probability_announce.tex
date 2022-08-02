@@ -1,0 +1,119 @@
+
+\documentclass[11pt,a4paper]{article}
+%\usepackage{russ}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+
+\usepackage{amsmath, amssymb}
+\usepackage{amscd}
+\usepackage{amsthm}
+% \usepackage[left=1.5cm,right=1.5cm,top=1cm,bottom=1cm]{geometry}
+\usepackage[right=4cm]{geometry}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage[pdftex,dvipsnames]{xcolor}  % Coloured text etc.
+\usepackage{graphicx}
+\usepackage{xargs}                      % Use more than one optional parameter in a new 
+\graphicspath{ {./pic/} }
+
+\def\Z{\mathbb{Z}}
+\def\N{\mathbb{N}}
+\def\R{\mathbb{R}}
+\def\F{\mathbb{F}}
+\def\Q{\mathbb{Q}}
+
+\def\E{\mathrm{\mathbb{E}}}
+\def\D{\mathrm{\mathbb{D}}}
+\def\P{\mathrm{P}}
+
+\newcounter{znum}
+\newcommand{\z}[1]{\addtocounter{znum}{1} \textbf{Задача \arabic{znum}#1. }}
+
+\newcounter{defnum}
+\newcommand{\df}[1]{\addtocounter{defnum}{1} \textbf{Определение \arabic{defnum}.} {\it #1}}
+
+\renewcommand{\!}{\textcolor{red}{!}}
+
+\usepackage{wrapfig}
+\usepackage{graphicx} % Allows including images
+\usepackage{float}
+
+
+\usepackage[
+	% disable,
+	colorinlistoftodos, prependcaption, textsize=normalsize,
+	linecolor=Dandelion, backgroundcolor=Yellow!25, bordercolor=Dandelion,
+	textwidth=100
+]{todonotes}
+
+\newcommandx{\note}[2][1=]{\todo[size=footnotesize, #1]{#2}}
+\newcommandx{\longnote}[2][1=]{\todo[inline, nolist, linecolor=Gray, backgroundcolor=Gray!25, bordercolor=Gray, #1]{#2}}
+\newcommandx{\problem}[2][1=]{\todo[backgroundcolor=red!25, linecolor=red, bordercolor=red, #1]{#2}}
+\newcommandx{\question}[2][1=]{\todo[
+	noprepend, inline,
+	linecolor=RoyalBlue, backgroundcolor=RoyalBlue!25, bordercolor=RoyalBlue, #1]{#2}
+}
+\newcommandx{\thought}[2][1=]{\todo[
+	noprepend, inline,
+	linecolor=Orchid, backgroundcolor=Orchid!25, bordercolor=Orchid, #1]{#2}
+}
+
+\newcommandx{\checkref}[2][1={check reference validity}, 2=]{
+	\todo[linecolor=red, backgroundcolor=red!25, bordercolor=red, size=footnotesize, #2]{#1}
+}
+\newcommandx{\needref}[2][1={need reference}, 2=]{
+	\todo[linecolor=red, backgroundcolor=red!25, bordercolor=red, size=footnotesize, #2]{#1}
+}
+\newcommand{\EMPH}[1]{{\large \textit{\textbf{#1}}}}
+
+
+\begin{document}
+
+\pagestyle{empty}
+
+\begin{center}
+	\large
+	\textbf{Знакомство с теорией вероятностей.}\\
+	\normalsize
+	О курсе.
+\end{center}
+
+
+Это будет вводный курс про теории вероятностей. 30\% теории, 70\% задач. Многие задачки интересные и вирусные. Можно сказать математические мемасы. Можно потом ходить всех ими озадачивать и люди обычно охотно озадачиваются ;)
+
+Этот курс является пререквизитом для курса по математической статистике, где я расскажу, что значит ''статистически значимый результат'', как доказывать, что ваше лекарство работает, чтобы ученые вам поверили. И как оценить, сколько подопытных крысок вам для этого нужно.
+
+\vspace{1cm}
+Приглашаются школьники \EMPH{всех отделений}, \EMPH{9+ класс}.\\
+\EMPH{Пререквизит: знакомство с комбинаторикой} (понимание, когда варианты надо перемножать, а когда складывать, и что такое $n!$ и $C_n^k$).\\
+\EMPH{Тестовые вопросы:}
+\begin{itemize}
+	\setlength\itemsep{0em}
+	\item Cколько есть способов выбрать из n человек капитана и его заместителя?
+	\item А сколько способов выбать двух человек?
+	\item Почему ответ разный?
+\end{itemize}
+\EMPH{Примерная программа:}
+\begin{itemize}
+	\setlength\itemsep{0em}
+	\item независимые события
+	\item условные вероятности
+	\item формула Байеса
+	\item математическое ожидание
+\end{itemize}
+\EMPH{Критерий зачета:}
+\begin{itemize}
+	\item полностью решить листок с теорией (т. е. второго)
+	\item решить 10 задач из первого и третьего листков
+\end{itemize}
+
+Тут будут появляться материалы курса по мере того как я буду их генерировать:
+
+\begin{center}
+	\includegraphics[width=0.3\textwidth]{qr_code.png}
+\end{center}
+
+
+
+\end{document}
