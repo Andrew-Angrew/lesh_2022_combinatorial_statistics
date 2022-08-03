@@ -1,0 +1,96 @@
+
+\documentclass[11pt,a4paper]{article}
+%\usepackage{russ}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+
+\usepackage{amsmath, amssymb}
+\usepackage{amscd}
+\usepackage{amsthm}
+% \usepackage[left=1.5cm,right=1.5cm,top=1cm,bottom=1cm]{geometry}
+\usepackage[top=3cm]{geometry}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage[pdftex,dvipsnames]{xcolor}  % Coloured text etc.
+\usepackage{graphicx}
+\usepackage{xargs}                      % Use more than one optional parameter in a new 
+\graphicspath{ {./pic/} }
+
+\def\Z{\mathbb{Z}}
+\def\N{\mathbb{N}}
+\def\R{\mathbb{R}}
+\def\F{\mathbb{F}}
+\def\Q{\mathbb{Q}}
+
+\def\E{\mathrm{\mathbb{E}}}
+\def\D{\mathrm{\mathbb{D}}}
+\def\P{\mathrm{P}}
+
+\newcounter{znum}
+\newcommand{\z}[1]{\addtocounter{znum}{1} \textbf{Задача \arabic{znum}#1. }}
+
+\newcounter{defnum}
+\newcommand{\df}[1]{\addtocounter{defnum}{1} \textbf{Определение \arabic{defnum}.} {\it #1}}
+
+\renewcommand{\!}{\textcolor{red}{!}}
+
+\usepackage{wrapfig}
+\usepackage{graphicx} % Allows including images
+\usepackage{float}
+
+
+\begin{document}
+\pagestyle{empty}
+
+
+\begin{center}
+	\large
+	\textbf{Теория}
+	\normalsize
+\end{center}
+
+Говорят, что конечное множество $\Omega$ является \emph{конечным вероятностным пространством}, если для любого его подмножества $A \subset \Omega$ задана его \emph{вероятность} $P(A)$ и выполняются следующие условия:
+
+$\bullet$ $P(\varnothing) = 0, P(\Omega) = 1$.
+
+$\bullet$ Для любого $A \subset \Omega$ верно $P(A) \geqslant 0$.
+
+$\bullet$ Для любых $A, B\subset \Omega$ верно $P(A\cup B) = P(A) + P(B) - P(A\cap B)$.
+
+Элементы $\omega \in \Omega$ принято называть \emph{элементарными исходами}, а подмножества $\Omega$ --- \emph{событиями}. События A и B называются \emph{независимыми}, если $P(A \cap B) = P(A) \cdot P(B)$.
+
+\z{} Придумайте вероятностные пространства для задач 1 (про 2 монеты) и 2 (про 2 кубика) из затравочного листка.
+
+\z{} $A$ и $B$ независимы. Докажите что $A$ и $\overline{B} = \Omega \backslash B$ независимы.
+
+\vspace{0.3cm}
+
+Если $P(B) \ne 0$, то \emph{условной вероятностью} события A при условии события~B называется число $P(A|B) = P(A \cap B)/P(B)$.
+
+\vspace{0.3cm}
+
+\z{} Пусть $P(B) \ne 0$, тогда A и B независимы $ \Leftrightarrow P(A) = P(A|B)$.
+
+\z{ (формула Байеса)} Проверьте что $\P(B | A) = \frac{\P(A | B)\P(B)}{\P(A)}$.
+
+\begin{center}
+	\large
+	\textbf{Задачи}
+	\normalsize
+\end{center}
+
+\z{} Одновременно подбрасываются 2 монеты, какова вероятность того что выпадет хотя бы один орел?
+
+\z{} Кинули два игральных кубика. С какой вероятностью \textbf{а)} сумма выпавших чисел равна 9? а 10? \textbf{б)} на втором кубике выпало больше, чем на первом?\\
+Независимы ли следующие события: \textbf{в)} «на первом выпала тройка» и «выпавшая сумма чётна»; \textbf{г)} «на первом выпала тройка» и «выпавшая сумма больше 6».
+
+\z{} В 90\% ресторанов, где есть хорошие бургеры, нет хороших крылышек, а в 90\% ресторанов, где есть хорошие крылышки, нет хороших бургеров. Значит ли это, наличия хороших бургеров и хороших крылышек являются зависимыми событиями?
+
+\z{} По результатам исследования среди выздоровевших людей 12\% принимали лекарство, а среди не выздоровевших -- 1\%. Журналисты сделали два вывода: 1) Для тех, кто принимает лекарство, вероятность выздороветь в 12 раз больше, чем вероятность не выздороветь. 2) При условии приема лекарства вероятность не выздороветь равна 1\%, следовательно вероятность выздороветь равна 99\%. \textbf{а)} Какие из выводов журналистов верны?
+\textbf{б)} Как посчитать вероятность выздороветь при условии приема лекарства и каких данных для этого не хватает?
+
+\z{} В одной лотерее у каждого игрока есть два набора из 15 различных чисел от 1 до 90. Игрок выигрывает джекпот, если случайный набор из 15 различных чисел от 1 до 90 (все такие наборы равновероятны) совпадет с одним из его наборов. Сравните с $1/2$ вероятность того, что кто-то получит джекпот, если 10 миллиардов человек будут играть в эту лотерею каждый день в течении 1000 лет (разрешается использовать внешний неорганический мозг).
+
+
+\end{document}

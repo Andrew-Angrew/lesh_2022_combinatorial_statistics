@@ -1,0 +1,77 @@
+
+\documentclass[11pt,a4paper]{article}
+%\usepackage{russ}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+
+\usepackage{amsmath, amssymb}
+\usepackage{amscd}
+\usepackage{amsthm}
+% \usepackage[left=1.5cm,right=1.5cm,top=1cm,bottom=1cm]{geometry}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage[pdftex,dvipsnames]{xcolor}  % Coloured text etc.
+\usepackage{graphicx}
+\usepackage{xargs}                      % Use more than one optional parameter in a new 
+\graphicspath{ {./pic/} }
+
+\def\Z{\mathbb{Z}}
+\def\N{\mathbb{N}}
+\def\R{\mathbb{R}}
+\def\F{\mathbb{F}}
+\def\Q{\mathbb{Q}}
+
+\def\E{\mathrm{\mathbb{E}}}
+\def\D{\mathrm{\mathbb{D}}}
+\def\P{\mathrm{P}}
+
+\newcounter{znum}
+\newcommand{\z}[1]{\addtocounter{znum}{1} \textbf{Задача \arabic{znum}#1. }}
+
+\newcounter{defnum}
+\newcommand{\df}[1]{\addtocounter{defnum}{1} \textbf{Определение \arabic{defnum}.} {\it #1}}
+
+\renewcommand{\!}{\textcolor{red}{!}}
+
+\usepackage{wrapfig}
+\usepackage{graphicx} % Allows including images
+\usepackage{float}
+
+
+\usepackage[
+	% disable,
+	colorinlistoftodos, prependcaption, textsize=normalsize,
+	linecolor=Dandelion, backgroundcolor=Yellow!25, bordercolor=Dandelion,
+	textwidth=100
+]{todonotes}
+
+\newcommandx{\note}[2][1=]{\todo[size=footnotesize, #1]{#2}}
+\newcommandx{\longnote}[2][1=]{\todo[inline, nolist, linecolor=Gray, backgroundcolor=Gray!25, bordercolor=Gray, #1]{#2}}
+\newcommandx{\problem}[2][1=]{\todo[backgroundcolor=red!25, linecolor=red, bordercolor=red, #1]{#2}}
+\newcommand{\EMPH}[1]{{\large \textit{\textbf{#1}}}}
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{center}
+	\large
+	\textbf{Частотная статистика.}\\
+\end{center}
+
+\z{ (!)} Расскажите мне все про тест точный тест Фишера: в чем состоит нулевая гипотеза; как считать pvalue; докажите корректность.
+
+\z{ (!)} Расскажите мне все про тест Манна-Уитни: в чем состоит нулевая гипотеза; как считать pvalue; докажите корректность.
+
+\z{} Придумайте, как посчитать статистику Манна-Уитни за $O(n\log n)$ (сортировка + O(n))
+
+\z{} Приведите пример таких величин X, Y что $\P(Y > X) > 1/2$, но $\E(Y) < \E(X)$.
+
+\z{} Приведите пример таких величин X, Y и Z, что 
+$$\P(Y > X) > 1/2,\quad  \P(Z > Y) > 1/2 \quad \mbox{и} \quad \P(X > Z) > 1/2.$$
+
+\z{*} Посчитайте дисперсию статистики Манна-Уитни при условии нулевой гипотезы.
+
+\z{**} Посчитайте правильное pvalue для "теста Гальтона".
+
+\end{document}
